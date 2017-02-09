@@ -18,6 +18,16 @@ Book.prototype = Object.create(Product.prototype, {
   constructor: {value: Book}
 });
 
+
+function VideoGame(name, price, platform) {
+  Product.apply(this, [name, price]);
+  this.platform = platform;
+}
+VideoGame.prototype = Object.create(Product.prototype, {
+  constructor: {value: VideoGame}
+});
+
+
 function DVD(name, price, moovie) {
   Product.apply(this, [name, price]);
   this.moovie = moovie;
@@ -29,5 +39,6 @@ DVD.prototype = Object.create(Product.prototype, {
 
 module.exports = {
   Book: Book,
-  DVD: DVD
+  DVD: DVD,
+  VideoGame: VideoGame
 };
