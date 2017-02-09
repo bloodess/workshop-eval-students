@@ -38,7 +38,8 @@ function calculateTotalprice(products) {
   for (var i = products.length - 1; i >= 0; i--) {
     sum += products[i].price;
   }
-  return sum;
+  //return sum.toFixed(2);
+  return Math.round(sum*100)/100;
 }
 
 function toString(currency, rateCurrency) {
@@ -46,7 +47,8 @@ function toString(currency, rateCurrency) {
   for (var i = products.length - 1; i >= 0; i--) {
     result += '\n - ' + products[i].toString(currency, rateCurrency);
   }
-  return result;
+  console.log('type of : ------ > '+ typeof result);
+  return  (''+result);
 }
 
 function open() {
