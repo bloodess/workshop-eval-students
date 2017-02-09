@@ -19,8 +19,16 @@ Book.prototype = Object.create(Product.prototype, {
 });
 */
 
+function getDuration(DVD){
+  return DVD.runningTime;
+}
+
+function getDuration(VideoGame){
+  
+}
+
 class Book extends Product {
-  constructor(name, price, isbn) {
+  constructor(name, price, isbn, minDuration, maxDuration) {
     super(name, price);
     this.name = name;
     this.price = price;
@@ -29,20 +37,23 @@ class Book extends Product {
 }
 
 class VideoGame extends Product {
-  constructor(name, price, platform){
+  constructor(name, price, platform, minDuration, maxDuration){
     super(name, price);
     this.name = name;
     this.price = price;
     this.isbn = platform;
+    this.minDuration = minDuration;
+    this.maxDuration = maxDuration;
   }
 }
 
 class DVD extends Product {
-  constructor(name, price, moovie){
+  constructor(name, price, moovie, static runningTime){
     super(name, price);
     this.name = name;
     this.price = price;
     this.moovie = moovie;
+    this.runningTime = runningTime;
   }
 }
 /*
