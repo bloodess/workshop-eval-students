@@ -52,7 +52,7 @@ function toString(currency, rateCurrency) {
   for (var i = products.length - 1; i >= 0; i--) {
     result += '\n - ' + products[i].toString(currency, rateCurrency);
   }
-  console.log('type of : ------ > '+ typeof result);
+  
   return  (result);
 }
 

@@ -9,7 +9,7 @@ function Product(name, price) {
     return chalk.yellow(this.name) + ' cost ' + chalk.red(this.price * rateCurrency) + currency;
   }
 }
-
+/*
 function Book(name, price, isbn) {
   Product.apply(this, [name, price]);
   this.isbn = isbn;
@@ -17,8 +17,35 @@ function Book(name, price, isbn) {
 Book.prototype = Object.create(Product.prototype, {
   constructor: {value: Book}
 });
+*/
 
+class Book extends Product {
+  constructor(name, price, isbn) {
+    super(name, price);
+    this.name = name;
+    this.price = price;
+    this.isbn = isbn;
+  }
+}
 
+class VideoGame extends Product {
+  constructor(name, price, platform){
+    super(name, price);
+    this.name = name;
+    this.price = price;
+    this.isbn = platform;
+  }
+}
+
+class DVD extends Product {
+  constructor(name, price, moovie){
+    super(name, price);
+    this.name = name;
+    this.price = price;
+    this.moovie = moovie;
+  }
+}
+/*
 function VideoGame(name, price, platform) {
   Product.apply(this, [name, price]);
   this.platform = platform;
@@ -35,7 +62,7 @@ function DVD(name, price, moovie) {
 DVD.prototype = Object.create(Product.prototype, {
   constructor: {value: DVD}
 });
-
+*/
 
 module.exports = {
   Book: Book,
